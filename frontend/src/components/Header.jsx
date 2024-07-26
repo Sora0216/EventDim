@@ -1,7 +1,25 @@
+import { useEffect } from "react";
+
 function Header() {
+  useEffect(() => {
+    const currentUrl = location.href;
+
+    const currentPage = currentUrl.split("/");
+
+    console.log(currentPage);
+
+    // if its homepage, header should be absolute (floating)
+    if (currentPage[currentPage.length - 1] == "") {
+      document.getElementById("header-container").style.position = "absolute";
+      // if its other pages, header is sticky
+    } else {
+      document.getElementById("header-container").style.position = "sticky";
+    }
+  }, []);
+
   return (
     <>
-      <div class="flex flex-wrap">
+      <header id="header-container" class="flex flex-wrap">
         <section class="relative mx-auto">
           <nav class="flex justify-between bg-gray-900 text-white w-screen">
             <div class="px-5 xl:px-12 py-6 flex w-full items-center">
@@ -41,7 +59,7 @@ function Header() {
             </div>
           </nav>
         </section>
-      </div>
+      </header>
     </>
   );
 }

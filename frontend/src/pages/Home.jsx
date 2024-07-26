@@ -1,7 +1,7 @@
 function Home() {
   return (
     <>
-      <div class="border-2 bg-blue-100 h-screen bg-cover relative">
+      <div class="border-2 bg-blue-100 bg-cover relative">
         <h1 class="absolute" id="main-title">
           Hello World
         </h1>
