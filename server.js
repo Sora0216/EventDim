@@ -3,16 +3,26 @@ const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
-const { authMiddleware } = require('./utils/auth');
+const { authMiddleware } = require('./server/utils/auth');
+const mongoose = require('mongoose');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+
+const dbURI = require('./config/keys').mongoURI;
 
 const server = new ApolloServer({
     typeDefs,
     resolvers,
     context: authMiddleware,
 });
+
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => {
+    console.error('Error connecting to MongoDB:', err.message);
+    process.exit(1);
+  });
 
 server.applyMiddleware({ app });
 
