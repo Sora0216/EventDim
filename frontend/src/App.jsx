@@ -1,21 +1,28 @@
-import "./App.css";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import About from "./pages/About";
-import Home from "./pages/Home";
-import { Outlet } from "react-router-dom";
+// src/App.jsx
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { ApolloProvider } from '@apollo/client';
+import client from './utils/apolloClient';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import EventDetail from './pages/EventDetail';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
-    <>
-      <Header />
-
-      <main>
-        <Outlet />
-      </main>
-
-      <Footer />
-    </>
+    <ApolloProvider client={client}>
+      <Router>
+        <div>
+          <Navbar />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={Signup} />
+            <Route exact path="/events/:id" component={EventDetail} />
+          </Switch>
+        </div>
+      </Router>
+    </ApolloProvider>
   );
 }
 
