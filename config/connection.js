@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const dbURI = require('./keys').mongoURI;
 
-mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(dbURI)
   .then(() => console.log('MongoDB connected'))
   .catch(err => {
     console.error('Error connecting to MongoDB:', err.message);
