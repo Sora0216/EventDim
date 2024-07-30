@@ -1,4 +1,3 @@
-// src/App.jsx
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ApolloProvider } from '@apollo/client';
 import client from './utils/apolloClient';
