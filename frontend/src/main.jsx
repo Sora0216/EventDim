@@ -1,4 +1,3 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
@@ -7,7 +6,7 @@ import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
 import Plan from "./pages/Plan.jsx";
 import Login from "./pages/Login.jsx";
-import Events from "./pages/Events.jsx";
+import Events from "./pages/EventDetail.jsx";
 
 const router = createBrowserRouter([
   {
