@@ -6,6 +6,8 @@ const db = require('./config/connection');
 const { authMiddleware } = require('./server/utils/auth');
 const mongoose = require('mongoose');
 
+const routes = require("./server/routes");
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 
