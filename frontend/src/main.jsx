@@ -6,7 +6,8 @@ import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
 import Plan from "./pages/Plan.jsx";
 import Login from "./pages/Login.jsx";
-import Events from "./pages/EventDetail.jsx";
+import Signup from "./pages/Signup.jsx";
+import EventDetail from "./pages/EventDetail.jsx";
 
 const router = createBrowserRouter([
   {
@@ -26,8 +27,12 @@ const router = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: "/events",
-        element: <Events />,
+        path: "/signup", // Ensure this path is included
+        element: <Signup />,
+      },
+      {
+        path: "/event/:id",
+        element: <EventDetail />,
       },
       {
         path: "/about",
