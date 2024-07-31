@@ -4,10 +4,11 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
-import Plan from "./pages/Plan.jsx";
 import Login from "./pages/Login.jsx";
-import Signup from "./pages/Signup.jsx";
-import EventDetail from "./pages/EventDetail.jsx";
+import Signup from './pages/Signup';
+import Events from "./pages/EventList.jsx";
+import CreateEvent from "./pages/CreateEvent.jsx";
+import EditEvent from "./pages/EditEvent.jsx";
 
 const router = createBrowserRouter([
   {
@@ -19,24 +20,28 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/plan",
-        element: <Plan />,
+        path: "/about",
+        element: <About />,
       },
       {
         path: "/login",
         element: <Login />,
       },
       {
-        path: "/signup", // Ensure this path is included
+        path: '/signup',
         element: <Signup />,
       },
       {
-        path: "/event/:id",
-        element: <EventDetail />,
+        path: "/events",
+        element: <Events />,
       },
       {
-        path: "/about",
-        element: <About />,
+        path: "/create-event",
+        element: <CreateEvent />,
+      },
+      {
+        path: "/edit-event/:id",
+        element: <EditEvent />,
       },
     ],
   },

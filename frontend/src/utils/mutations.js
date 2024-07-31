@@ -1,59 +1,65 @@
 import { gql } from '@apollo/client';
 
+// Mutation for user signup
 export const SIGNUP_USER = gql`
-  mutation signup($email: String!, $password: String!) {
-    signup(email: $email, password: $password) {
+  mutation Signup($username: String!, $email: String!, $password: String!) {
+    signup(username: $username, email: $email, password: $password) {
       token
       user {
-        _id
+        id
+        username
         email
       }
     }
   }
 `;
 
+// Mutation for user login
 export const LOGIN_USER = gql`
-  mutation login($email: String!, $password: String!) {
+  mutation Login($email: String!, $password: String!) {
     login(email: $email, password: $password) {
       token
       user {
-        _id
+        id
         username
+        email
       }
     }
   }
 `;
 
-export const ADD_USER = gql`
-  mutation addUser($username: String!, $email: String!, $password: String!) {
-    addUser(username: $username, email: $email, password: $password) {
-      token
-      user {
-        _id
-        username
-      }
-    }
-  }
-`;
-
-export const ADD_EVENT = gql`
-  mutation addEvent($title: String!, $description: String, $date: String!) {
-    addEvent(title: $title, description: $description, date: $date) {
-      _id
+// Mutation to create an event
+export const CREATE_EVENT = gql`
+  mutation CreateEvent($title: String!, $date: String!, $description: String!) {
+    createEvent(title: $title, date: $date, description: $description) {
+      id
       title
-      description
       date
+      description
     }
   }
 `;
 
-export const ADD_ACTIVITY = gql`
-  mutation addActivity($eventId: ID!, $name: String!, $startTime: String!, $endTime: String!) {
-    addActivity(eventId: $eventId, name: $name, startTime: $startTime, endTime: $endTime) {
-      _id
-      name
-      startTime
-      endTime
+// Mutation to update an event
+export const UPDATE_EVENT = gql`
+  mutation UpdateEvent($id: ID!, $title: String, $date: String, $description: String) {
+    updateEvent(id: $id, title: $title, date: $date, description: $description) {
+      id
+      title
+      date
+      description
+    }
+  }
+`;
+
+// Mutation to delete an event
+export const DELETE_EVENT = gql`
+  mutation DeleteEvent($id: ID!) {
+    deleteEvent(id: $id) {
+      id
+      title
+      date
+      description
     }
   }
 `;
