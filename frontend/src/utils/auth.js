@@ -1,23 +1,34 @@
-const Auth = {
-    getToken: function () {
+import jwtDecode from 'jwt-decode';
+
+class AuthService {
+    getToken() {
       return localStorage.getItem('id_token');
-    },
+    }
   
-    login: function (token) {
+    login(token) {
       localStorage.setItem('id_token', token);
       window.location.assign('/');
-    },
+    }
   
-    logout: function () {
+    logout() {
       localStorage.removeItem('id_token');
       window.location.assign('/login');
-    },
+    }
 
-    loggedIn: function () {
+    loggedIn() {
       const token = this.getToken();
-      return !!token;
-    },
-  };
+      return !!token && !this.isTokenExpired(token);
+    }
+
+    isTokenExpired(token) {
+      try {
+        const decode = decode(token);
+        return decoded.exp < Date.now() / 1000;
+      } catch (err) {
+        return false;
+      }
+    }
+  }
   
-  export default Auth;
+  export default new AuthService();
   
