@@ -19,42 +19,42 @@ function Header() {
 
   return (
     <>
-      <header id="header-container" class="flex flex-wrap">
-        <section class="relative mx-auto">
-          <nav class="flex justify-between bg-gray-900 text-white w-screen">
-            <div class="px-5 xl:px-12 py-[5px] flex w-full items-center">
-              <a class="text-3xl font-bold font-heading" href="/">
+      <header id="header-container" className="flex flex-wrap">
+        <section className="relative mx-auto">
+          <nav className="flex justify-between bg-gray-900 text-white w-screen">
+            <div className="px-5 xl:px-12 py-[5px] flex w-full items-center">
+              <a className="text-3xl font-bold font-heading" href="/">
                 <img
-                  class="w-[70px] rounded-full"
+                  className="w-[70px] rounded-full"
                   src="/images/Updated Globe.png"
                 />
               </a>
 
-              <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
-                <li>
-                  <a class="hover:text-gray-200" href="/">
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a class="hover:text-gray-200" href="/plan">
-                    Plan Event
-                  </a>
-                </li>
+        <ul className="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
+          <li>
+            <a className="hover:text-gray-200" href="/">
+              Home
+            </a>
+          </li>
+          <li>
+            <a className="hover:text-gray-200" href="/plan">
+              Plan Event
+            </a>
+          </li>
+
+          <li>
+            <a className="hover:text-gray-200" href="/login">
+              Register / Login
+            </a>
+          </li>
 
                 <li>
-                  <a class="hover:text-gray-200" href="/login">
-                    Register / Login
-                  </a>
-                </li>
-
-                <li>
-                  <a class="hover:text-gray-200" href="/events">
+                  <a className="hover:text-gray-200" href="/events">
                     My Events
                   </a>
                 </li>
                 <li>
-                  <a class="hover:text-gray-200" href="/about">
+                  <a className="hover:text-gray-200" href="/about">
                     About
                   </a>
                 </li>
