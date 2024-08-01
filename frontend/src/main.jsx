@@ -9,6 +9,8 @@ import Signup from './pages/Signup';
 import Events from "./pages/EventList.jsx";
 import CreateEvent from "./pages/CreateEvent.jsx";
 import EditEvent from "./pages/EditEvent.jsx";
+import { ApolloProvider } from "@apollo/client";
+import client from './apolloClient';
 
 const router = createBrowserRouter([
   {
