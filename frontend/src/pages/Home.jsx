@@ -3,7 +3,7 @@ function Home() {
     <>
       <div class="border-2 bg-blue-100 bg-cover relative">
         <h1 class="absolute" id="main-title">
-          Hello World
+          Events Dim
         </h1>
 
         <video autoPlay muted loop>

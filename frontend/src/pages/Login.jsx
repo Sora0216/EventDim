@@ -37,6 +37,9 @@ function Login() {
           <button
             class="bg-blue-400 hover:bg-blue-dark text-white font-bold py-2 px-4 rounded"
             type="button"
+            onClick={() => {
+              window.location.href = "/events";
+            }}
           >
             Sign In
           </button>
