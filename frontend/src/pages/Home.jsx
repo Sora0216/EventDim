@@ -2,10 +2,10 @@ import { Link } from 'react-router-dom';
 
 function Home() {
   return (
-    <div className="border-2 bg-blue-100 h-screen bg-cover relative">
-      <h1 className="absolute text-white text-4xl top-10 left-10" id="main-title">
-        Welcome to Event Manager
-      </h1>
+      <div className="border-2 bg-blue-100 bg-cover relative">
+        <h1 className="absolute" id="main-title">
+          Events Dim
+        </h1>
 
       <video autoPlay muted loop className="absolute w-full h-full object-cover">
         <source src="/videos/bg.mp4" type="video/mp4" />

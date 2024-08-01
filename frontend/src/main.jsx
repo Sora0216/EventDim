@@ -5,10 +5,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
 import Login from "./pages/Login.jsx";
-import Signup from './pages/Signup';
-import Events from "./pages/EventList.jsx";
-import CreateEvent from "./pages/CreateEvent.jsx";
-import EditEvent from "./pages/EditEvent.jsx";
+import Register from "./pages/Register.jsx";
+import Events from "./pages/Events.jsx";
 
 const router = createBrowserRouter([
   {
@@ -28,20 +26,12 @@ const router = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: '/signup',
-        element: <Signup />,
+        path: "/register",
+        element: <Register />,
       },
       {
         path: "/events",
         element: <Events />,
-      },
-      {
-        path: "/create-event",
-        element: <CreateEvent />,
-      },
-      {
-        path: "/edit-event/:id",
-        element: <EditEvent />,
       },
     ],
   },
