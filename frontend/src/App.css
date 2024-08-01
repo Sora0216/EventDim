@@ -16,6 +16,8 @@ video {
 
 main {
     min-height: 90vh;
+    max-height: 100vh;
+    overflow: scroll;
 }
 
 #main-title {

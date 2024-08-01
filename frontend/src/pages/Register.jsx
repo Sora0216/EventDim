@@ -1,9 +1,9 @@
-function Login() {
+function Register() {
   return (
     <div class="flex justify-center pt-[90px]">
       <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col w-[500px] p-10">
         <div class="mb-4">
-          <h2 class="mb-4">Login Form</h2>
+          <h2 class="mb-4">Register Form</h2>
           <hr />
           <label
             class="block text-grey-darker text-sm font-bold mb-2"
@@ -38,24 +38,22 @@ function Login() {
             class="bg-blue-400 hover:bg-blue-dark text-white font-bold py-2 px-4 rounded"
             type="button"
           >
-            Sign In
+            Register
           </button>
           <a
             class="inline-block align-baseline font-bold text-sm text-blue hover:text-blue-darker"
-            href="/register"
+            href="/login"
           >
-            Register
+            Sign In
           </a>
           <a
             class="inline-block align-baseline font-bold text-sm text-blue hover:text-blue-darker"
             href="#"
-          >
-            Forgot Password?
-          </a>
+          ></a>
         </div>
       </div>
     </div>
   );
 }
 
-export default Login;
+export default Register;
